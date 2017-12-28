@@ -6,4 +6,6 @@ To play, just clone the repo and make the url available to the outside world (I 
 
 OR
 
-just got to http://893f543c.ngrok.io/fizzy/
+just go to http://893f543c.ngrok.io/fizzy/ to receive a call
+or
+call (415) 649-3308 directly to play
