@@ -1,0 +1,99 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>PhoneBuzz</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <style>
+      body {
+        padding-top: 54px;
+      }
+      @media (min-width: 992px) {
+        body {
+          padding-top: 56px;
+        }
+      }
+      div {
+        margin-bottom: 10px;
+        position: relative;
+      }
+
+      input[type="number"] {
+        width: 100px;
+      }
+
+      input + span {
+        padding-right: 30px;
+      }
+
+      input:invalid+span:after {
+        position: absolute; content: '✖';
+        padding-left: 5px;
+        color: #8b0000;
+      }
+
+      input:valid+span:after {
+        position: absolute;
+        content: '✓';
+        padding-left: 5px;
+        color: #009000;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">PhoneBuzz!</a>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 class="mt-5">Hello</h1>
+          <p class="lead">Please enter your phone number and an integer to play</p>
+          <form action="/fizzy/makeCall" method="post">
+            <label for="telNo">Enter a telephone number (in the form xxxxxxxxxx): </label>
+            <input type="tel" input id="telNo" name="telNo" placeholder="0000000000" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
+            <span class="validity"></span>
+            <div class="invalid-feedback">
+              Please provide a valid phone number.
+            </div>
+            <div>
+              <label for="delay">Enter a delay: </label>
+              <input type="number" input id="delay" name="delay" min=0 required>
+              <div class="invalid-feedback">
+                Please provide a valid positive integer.
+              </div>
+            </div>
+            <input type="submit" value="OK">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap-formhelpers-phone.js' %}"></script>
+
+  </body>
+
+</html>
